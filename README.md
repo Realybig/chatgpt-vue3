@@ -1,5 +1,10 @@
 # ChatGPT Vue3
 
+使用 Vue3 搭建的纯前端 ChatGPT 项目
+
+1. 支持上下文关联
+2.  
+
 ## Project setup
 ```
 pnpm install
