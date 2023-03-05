@@ -6,4 +6,5 @@ import App from "./App.vue";
 const app = createApp(App);
 
 app.use(ElementPlus);
-createApp(App).mount("#app");
+
+app.mount("#app");

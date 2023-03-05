@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
+import { ElMessage } from "element-plus";
 
 const configuration = new Configuration({
   organization: process.env.VUE_APP_ORGANIZATION,
@@ -7,11 +8,16 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export async function generateText(messages) {
-  const completions = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    max_tokens: 2048,
-    messages,
-  });
+  try {
+    const completions = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      max_tokens: 2048,
+      messages,
+    });
+    console.log(completions);
 
-  return completions.data.choices[0].message;
+    return completions.data.choices[0].message;
+  } catch (error) {
+    ElMessage.error(error.message);
+  }
 }
