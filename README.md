@@ -1,4 +1,4 @@
-# openai-demo
+# ChatGPT Vue3
 
 ## Project setup
 ```
